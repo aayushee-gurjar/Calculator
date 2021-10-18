@@ -1,0 +1,174 @@
+:root{
+  --primary-color:rgb(22, 22, 22);
+  --header-color:#fff;
+  --body-bg:rgb(221, 211, 211);
+  --footer-bg:rgb(255, 255, 255);
+  --font-color:#333;
+  --symbol-color:#ec4714;
+  --symbol-dark:#fd0000;
+  --symbol-hover:rgb(190, 127, 91);
+  --symbol-number-hover:rgb(241, 221, 221);
+  --slider-circle:#000;
+
+}
+
+[data-theme="dark"]{
+
+  --primary-color:rgb(33, 39, 39);
+  --header-color:#000;
+  --footer-bg:#000;
+  --symbol-color:rgb(230, 9, 9);
+  --symbol-hover:rgb(196, 35, 14);
+  --slider-circle:#fff;
+  --font-color:#fff;
+  --symbol-dark:#d34f27;
+
+}
+
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 100vw;
+    height: 100vh;
+    background-color:var(--primary-color);
+
+}
+.calculator{
+    display:grid;
+    grid-template-rows:8% 25% auto;
+    width: 400px;
+    height:600px;
+    background-color:white;
+    border-radius: 5px;
+    box-shadow:0px 0px 10px 3px rgb(0, 0, 0,0.2);
+}
+.calculator-header{
+  display: flex;
+  justify-content:flex-end;
+  padding: 0 15px;
+  background-color: var(--header-color);
+}
+.calculator-body{
+  display: flex;
+  justify-content: flex-end;
+  align-items:flex-end;
+  padding: 20px;
+  background-color:var(--body-bg) ;
+  text-align: right;
+  
+}
+.calculator-footer{
+  display:grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows:auto auto auto auto auto;
+  justify-content: space-around;
+  grid-column-gap:10px;
+  grid-row-gap:10px;
+  padding: 10px 0;
+  background-color:var(--footer-bg) ;
+}
+.calculator-footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 500;
+    color:var(--font-color);
+    transition: 0.4s all;
+
+}
+.calculator-footer div.symbol{
+    background-color: var(--symbol-color);
+    color: white;
+}
+
+.calculator-footer div.symbol-dark{
+    background-color: var(--symbol-dark);
+    color:white;
+}
+.calculator-footer div.symbol:hover{
+
+    background-color: var(--symbol-hover);
+}
+.calculator-footer div:hover{
+    cursor:pointer;
+
+}
+.calculator-footer div:hover{
+
+    background-color: var(--symbol-number-hover);
+}
+/* CSS snipets for switch */
+
+/*slider switch css */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .theme-switch-wrapper em {
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  
+  .theme-switch {
+    display: inline-block;
+    height: 16px;
+    position: relative;
+    width: 50px;
+  }
+  
+  .theme-switch input {
+    display: none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    background-color: var(--slider-circle);
+    content: "";
+    bottom: -5px;
+    height: 26px;
+    /* left: 0px; */
+    right: 25px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: #66bb6a;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
